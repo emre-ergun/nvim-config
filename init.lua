@@ -1,1 +1,3 @@
-require("engramsoft")
+require("engramsoft.core")
+require("engramsoft.lazy")
+
