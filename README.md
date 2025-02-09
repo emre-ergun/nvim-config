@@ -22,4 +22,7 @@ Keep tracking of the tools working with Nvim
 - ToDo Comment (folke/todo-comments.nvim)
 - Substitute (gbprod/substitute.nvim)
 - Surround (kylechui/nvim-surround)
+- Mason (williamboman/mason.nvim)
+- Lsp config (neovim/nvim-lspconfig)
+- Trouble (folke/trouble.nvim)
 

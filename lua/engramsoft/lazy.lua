@@ -11,7 +11,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("engramsoft.plugins", {
+require("lazy").setup({ { import = "engramsoft.plugins" }, { import = "engramsoft.plugins.lsp"} }, {
   checker = {
     enabled = true,
     notify = false,
