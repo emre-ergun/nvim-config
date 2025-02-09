@@ -15,4 +15,5 @@ Keep tracking of the tools working with Nvim
 - Buffer Line (akinsho/bufferline.nvim)
 - Lua Line Status (nvim-lualine/lualine.nvim)
 - Dressing helps better ui (stevearc/dressing.nvim)
+- Vim Split maximizer (szw/vim-maximizer)
 
