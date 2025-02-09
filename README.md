@@ -25,4 +25,6 @@ Keep tracking of the tools working with Nvim
 - Mason (williamboman/mason.nvim)
 - Lsp config (neovim/nvim-lspconfig)
 - Trouble (folke/trouble.nvim)
-
+- Formatting (stevearc/conform.nvim)
+- Linting (mfussenegger/nvim-lint)
+- Formatting (stevearc/conform.nvim)
