@@ -10,4 +10,5 @@ Keep tracking of the tools working with Nvim
 - Telescope (nvim-telescope/telescope.nvim)
 - Vim Tmux Navigator (christoomey/vim-tmux-navigator)
 - Nvim Tree (nvim-tree/nvim-tree.lua)
+- Which Key (folke/which-key.nvim)
 
