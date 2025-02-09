@@ -17,4 +17,9 @@ Keep tracking of the tools working with Nvim
 - Dressing helps better ui (stevearc/dressing.nvim)
 - Vim Split maximizer (szw/vim-maximizer)
 - Indent Blank Lines (lukas-reineke/indent-blankline.nvim)
+- Completion Engine (hrsh7th/nvim-cmp)
+- Comment (numToStr/Comment.nvim)
+- ToDo Comment (folke/todo-comments.nvim)
+- Substitute (gbprod/substitute.nvim)
+- Surround (kylechui/nvim-surround)
 

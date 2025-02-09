@@ -3,7 +3,8 @@ return {
   dependencies = { 
     'nvim-lua/plenary.nvim',
     {"nvim-telescope/telescope-fzf-native.nvim", build = "make"},
-    "nvim-tree/nvim-web-devicons" 
+    "nvim-tree/nvim-web-devicons", 
+    "folke/todo-comments.nvim"
   },
   config = function()
     local telescope = require("telescope")
@@ -34,5 +35,6 @@ return {
     keymap.set('n', '<leader>fb', "<cmd>Telescope buffers<cr>", { desc = 'Telescope buffers' })
     keymap.set('n', '<leader>fh', "<cmd>Telescope help_tags<cr>", { desc = 'Telescope help tags' })
     keymap.set("n", "<C-f>", "<cmd>Telescope git_files<cr>", {desc = "Fuzy find files in git project"})
+    keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
   end
 }
