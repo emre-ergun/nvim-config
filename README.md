@@ -16,4 +16,5 @@ Keep tracking of the tools working with Nvim
 - Lua Line Status (nvim-lualine/lualine.nvim)
 - Dressing helps better ui (stevearc/dressing.nvim)
 - Vim Split maximizer (szw/vim-maximizer)
+- Indent Blank Lines (lukas-reineke/indent-blankline.nvim)
 
