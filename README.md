@@ -12,4 +12,7 @@ Keep tracking of the tools working with Nvim
 - Nvim Tree (nvim-tree/nvim-tree.lua)
 - Which Key (folke/which-key.nvim)
 - Auto session (rmagatti/auto-session)
+- Buffer Line (akinsho/bufferline.nvim)
+- Lua Line Status (nvim-lualine/lualine.nvim)
+- Dressing helps better ui (stevearc/dressing.nvim)
 
