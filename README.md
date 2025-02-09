@@ -11,4 +11,5 @@ Keep tracking of the tools working with Nvim
 - Vim Tmux Navigator (christoomey/vim-tmux-navigator)
 - Nvim Tree (nvim-tree/nvim-tree.lua)
 - Which Key (folke/which-key.nvim)
+- Auto session (rmagatti/auto-session)
 
