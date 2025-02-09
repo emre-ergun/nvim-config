@@ -28,3 +28,5 @@ Keep tracking of the tools working with Nvim
 - Formatting (stevearc/conform.nvim)
 - Linting (mfussenegger/nvim-lint)
 - Formatting (stevearc/conform.nvim)
+- Git Signs (lewis6991/gitsigns.nvim)
+- Lazy Git (kdheepak/lazygit.nvim)
