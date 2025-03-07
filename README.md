@@ -6,6 +6,7 @@ Keep tracking of the tools working with Nvim
 
 - Autopairs (windwp/nvim-autopairs)
 - ColorScheme (folke/tokyonight.nvim)
+- ColorScheme (rose-pine/neovim)
 - Treesiter (nvim-treesitter/nvim-treesitter)
 - Telescope (nvim-telescope/telescope.nvim)
 - Vim Tmux Navigator (christoomey/vim-tmux-navigator)
