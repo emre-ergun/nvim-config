@@ -32,3 +32,4 @@ Keep tracking of the tools working with Nvim
 - Git Signs (lewis6991/gitsigns.nvim)
 - Lazy Git (kdheepak/lazygit.nvim)
 - Copilot (zbirenbaum/copilot-cmp)
+- Harpoon (ThePrimeagen/harpoon)
