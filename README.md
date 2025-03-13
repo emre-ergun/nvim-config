@@ -33,3 +33,4 @@ Keep tracking of the tools working with Nvim
 - Lazy Git (kdheepak/lazygit.nvim)
 - Copilot (zbirenbaum/copilot-cmp)
 - Harpoon (ThePrimeagen/harpoon)
+- Debug Adaptor (mfussenegger/nvim-dap)
