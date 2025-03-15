@@ -12,6 +12,8 @@ return {
 				suggestion = { enabled = false },
 				panel = { enabled = false },
 			})
+
+			vim.cmd("Copilot disable")
 		end,
 	},
 }
