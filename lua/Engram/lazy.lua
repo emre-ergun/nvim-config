@@ -14,8 +14,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup(
     {
-        { import = "Engram.plugins" },
-        { import = "Engram.plugins.lsp" },
+        { import = "engram.plugins" },
+        { import = "engram.plugins.lsp" },
     },
     {
         rocks = {

@@ -1,2 +1,2 @@
-require("Engram.core.options")
-require("Engram.core.keymaps")
+require("engram.core.options")
+require("engram.core.keymaps")

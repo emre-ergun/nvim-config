@@ -22,7 +22,7 @@ return {
                 highlight_groups = {
                     ColorColumn = { bg = "#1C1C21" },
                     Normal = { bg = "none" }, -- Main background remains transparent
-                    NormalFloat = { bg = "#1C1C21" },
+                    NormalFloat = { bg = "none" },
                     Pmenu = { bg = "#191724" }, -- Completion menu background
                     PmenuSel = { bg = "#4a465d", fg = "NONE" }, -- Highlighted completion item
                     FloatBorder = { bg = "base" },
@@ -335,7 +335,7 @@ return {
                 },
             })
 
-            -- vim.cmd.colorscheme("catppuccin")
+            vim.cmd.colorscheme("catppuccin")
         end,
     },
 }

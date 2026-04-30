@@ -22,6 +22,7 @@ return {
 				TEST = { icon = "⏲ ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
 				FORGETNOT = { icon = " ", color = "hint" },
 			},
+
             -- Patterns for hl markdown support
             highlight = {
                 multiline = true,
@@ -51,12 +52,7 @@ return {
 		})
 
 		-- keymaps
-		vim.keymap.set("n", "]t", function()
-			todo_comments.jump_next()
-		end, { desc = "Next todo comment" })
-
-		vim.keymap.set("n", "[t", function()
-			todo_comments.jump_prev()
-		end, { desc = "Previous todo comment" })
+		vim.keymap.set("n", "]t", function() todo_comments.jump_next() end, { desc = "Next todo comment" })
+		vim.keymap.set("n", "[t", function() todo_comments.jump_prev() end, { desc = "Previous todo comment" })
 	end,
 }

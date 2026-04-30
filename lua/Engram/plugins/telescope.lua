@@ -1,50 +1,36 @@
 return {
-	"nvim-telescope/telescope.nvim",
-	branch = "master", -- using master to fix issues with deprecated to definition warnings 
-    -- '0.1.x' for stable ver.
-	dependencies = {
-		"nvim-lua/plenary.nvim",
-		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-		"nvim-tree/nvim-web-devicons",
-		"andrew-george/telescope-themes",
-	},
-	config = function()
-		local telescope = require("telescope")
-		local actions = require("telescope.actions")
-		local builtin = require("telescope.builtin")
+  "nvim-telescope/telescope.nvim",
+  -- branch = "0.1.x",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    "nvim-tree/nvim-web-devicons",
+  },
+  config = function()
+    local telescope = require("telescope")
+    local actions = require("telescope.actions")
 
-		telescope.load_extension("fzf")
-		telescope.load_extension("themes")
+    telescope.setup({
+      defaults = {
+        path_display = { "smart" },
+        mappings = {
+          i = {
+            ["<C-k>"] = actions.move_selection_previous, -- move to prev result
+            ["<C-j>"] = actions.move_selection_next, -- move to next result
+            ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+          },
+        },
+      },
+    })
 
-		telescope.setup({
-			defaults = {
-				path_display = { "smart" },
-				mappings = {
-					i = {
-						["<C-k>"] = actions.move_selection_previous,
-						["<C-j>"] = actions.move_selection_next,
-					},
-				},
-			},
-			extensions = {
-				themes = {
-					enable_previewer = true,
-					enable_live_preview = true,
-					persist = {
-						enabled = true,
-						path = vim.fn.stdpath("config") .. "/lua/colorscheme.lua",
-					},
-				},
-			},
-		})
+    telescope.load_extension("fzf")
 
-		-- Keymaps
-		vim.keymap.set("n", "<leader>pr", "<cmd>Telescope oldfiles<CR>", { desc = "Fuzzy find recent files" })
-		vim.keymap.set("n", "<leader>pWs", function()
-			local word = vim.fn.expand("<cWORD>")
-			builtin.grep_string({ search = word })
-		end, { desc = "Find Connected Words under cursor" })
+    -- set keymaps
+    local keymap = vim.keymap -- for conciseness
 
-		vim.keymap.set("n", "<leader>ths", "<cmd>Telescope themes<CR>", { noremap = true, silent = true, desc = "Theme Switcher" })
-    end,
+    keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
+    keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
+    keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
+    keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
+  end,
 }
