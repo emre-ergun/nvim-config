@@ -216,19 +216,6 @@ return {
 			},
 		})
 
-		-- gopls
-		-- vim.lsp.config("gopls", {
-		--     settings = {
-		--         gopls = {
-		--             analyses = {
-		--                 unusedparams = true,
-		--             },
-		--             staticcheck = true,
-		--             gofumpt = true,
-		--         },
-		--     },
-		-- })
-
 		-- c/c++
 		vim.lsp.config("clangd", {
 			-- Basic clangd command-line arguments
@@ -331,18 +318,6 @@ return {
 			},
 		})
 
-		-- astro
-		vim.lsp.config("astro", {
-			filetypes = { "astro" },
-
-			init_options = {
-				typescript = {
-					tsdk = vim.fn.stdpath("data")
-						.. "/mason/packages/typescript-language-server/node_modules/typescript/lib",
-				},
-			},
-		})
-
 		-- Instead of using mason enable all configured LSP via `automatic_enable=true`
 		-- Prefer more control by enable manual server call below via vim.lsp.enable("")
 		-- mason config: lua/sethy/plugins/lsp/mason.lua:22
@@ -352,8 +327,6 @@ return {
 			"emmet_language_server",
 			"emmet_ls",
 			"ts_ls",
-			"gopls",
-			"astro",
 			"tailwindcss",
 			"marksman",
 			"clangd",

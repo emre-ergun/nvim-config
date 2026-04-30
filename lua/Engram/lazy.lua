@@ -12,21 +12,15 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup(
-    {
-        { import = "engram.plugins" },
-        { import = "engram.plugins.lsp" },
-    },
-    {
-        rocks = {
-            enabled = false,
-        },
-        checker = {
-            enabled = true,
-            notify = false,
-        },
-        change_detection = {
-            notify = false,
-        },
-    }
-)
+require("lazy").setup({
+	{ import = "engram.plugins" },
+	{ import = "engram.plugins.lsp" },
+}, {
+	checker = {
+		enabled = true,
+		notify = false,
+	},
+	change_detection = {
+		notify = false,
+	},
+})
