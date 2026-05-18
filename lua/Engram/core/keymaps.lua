@@ -10,8 +10,8 @@ local keymap = vim.keymap -- for conciseness
 keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "moves lines down in visual selection" })
 keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "moves lines up in visual selection" })
 
-keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) 
-keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) 
+keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" })
+keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" })
 
 keymap.set("n", "J", "mzJ`z", { desc = "join the lines" })
 keymap.set("n", "<C-d>", "<C-d>zz", { desc = "move down in buffer with cursor centered" })
@@ -26,7 +26,7 @@ keymap.set("v", ">", ">gv", opts)
 keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Del w/o yanked" })
 vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste w/o losing" })
 
-keymap.set("i", "<C-c>", "<Esc>", { desc = "Return the normal mode"})
+keymap.set("i", "jj", "<Esc>", { desc = "Return the normal mode" })
 keymap.set("n", "<C-c>", ":nohl<CR>", { desc = "Clear search hl", silent = true })
 
 -- window management
@@ -42,12 +42,15 @@ keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) -- g
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to prev tab" }) -- go to prev tab
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) -- open current buffer in new tab
 
+-- copy to clipboard
+vim.keymap.set("v", "<D-c>", '"+y')
+
 -- Copy filepath to the clipboard
 vim.keymap.set("n", "<leader>cfp", function()
-    local filePath = vim.fn.expand("%:~")
-    vim.fn.setreg("+", filePath)
-    print("File path copied to clipboard: " .. filePath)
+	local filePath = vim.fn.expand("%:~")
+	vim.fn.setreg("+", filePath)
+	print("File path copied to clipboard: " .. filePath)
 end, { desc = "Copy file path to clipboard" })
 
--- restart 
-vim.keymap.set("n", "<leader>rsv", "<cmd>restart<cr>", { desc = "Restart Neovim (:restart)", })
+-- restart
+vim.keymap.set("n", "<leader>rsv", "<cmd>restart<cr>", { desc = "Restart Neovim (:restart)" })

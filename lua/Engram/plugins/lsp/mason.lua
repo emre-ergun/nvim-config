@@ -37,20 +37,21 @@ return {
 				"emmet_ls",
 				"emmet_language_server",
 				"marksman",
+				"pyright", -- Language Server
+				"gopls", -- Language Server
+				"clangd",
+				"protols",
 			},
 		})
 
 		mason_tool_installer.setup({
 			ensure_installed = {
-				"pyright", -- Language Server
 				"black", -- Formatter
 				"prettier",
 				"stylua",
 				"isort",
 				"pylint",
-				"rust-analyzer",
 				"codelldb",
-				"clangd",
 				"clang-format",
 				"neocmakelsp",
 				"cmakelang",

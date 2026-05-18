@@ -271,6 +271,36 @@ return {
 			},
 		})
 
+		-- gopls
+		vim.lsp.config("gopls", {
+			settings = {
+				gopls = {
+					analyses = {
+						unusedparams = true,
+					},
+					staticcheck = true,
+					gofumpt = true,
+				},
+			},
+		})
+
+		local gopath = os.getenv("GOPATH") or (os.getenv("HOME") .. "/go")
+
+		-- protols
+		vim.lsp.config("protols", {
+			settings = {
+				protols = {
+					include_paths = {
+						".", -- Local project
+						"proto", -- Local proto folder
+						gopath .. "/pkg/mod", -- ALL Go modules
+						"/usr/local/include", -- System protos (google/protobuf/...)
+					},
+					discover_from_buf = true,
+				},
+			},
+		})
+
 		-- css
 		vim.lsp.config("cssls", {
 			filetypes = { "css", "scss", "less" },
@@ -333,6 +363,8 @@ return {
 			"cmake",
 			"pyright",
 			"rust_analyzer",
+			"gopls",
+			"protols",
 		})
 	end,
 }

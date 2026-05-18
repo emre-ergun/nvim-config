@@ -1,10 +1,13 @@
 vim.cmd("let g:netrw_banner = 0")
 
-local opt = vim.opt;
+local opt = vim.opt
 
 -- line numbers
 opt.relativenumber = true
 opt.number = true
+
+opt.virtualedit = "none"
+opt.sidescrolloff = 8
 
 -- tabs and indentations
 opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
@@ -21,6 +24,13 @@ opt.smartcase = true -- if you include mixed case in your search, assumes you wa
 
 opt.cursorline = true
 
+-- (Saves a file in ~/.local/state/nvim/undo)
+-- Undo files: persistent undo even after closing Neovim
+opt.undofile = true
+
+-- Better completion experience for C/C++
+opt.completeopt = "menuone,noselect"
+
 -- turn on termguicolors for tokyonight colorscheme to work
 -- have to use iterm2 or any other true color terminal
 opt.termguicolors = true
@@ -31,7 +41,7 @@ opt.signcolumn = "yes" -- show sign column that text doesn't shift
 opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
 
 -- clipboard
-opt.clipboard:append("unnamedplus") -- use system clipboard as default clipboard
+opt.clipboard = "unnamedplus" -- use system clipboard as default clipboard
 
 -- split windows
 opt.splitright = true -- split vertical window to the right
@@ -39,8 +49,8 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 -- Hightlight yanking
 vim.api.nvim_create_autocmd("TextYankPost", {
-    desc = "Highlight when yanking (copying) text",
-    callback = function()
-        vim.hl.on_yank()
-    end,
+	desc = "Highlight when yanking (copying) text",
+	callback = function()
+		vim.hl.on_yank()
+	end,
 })
