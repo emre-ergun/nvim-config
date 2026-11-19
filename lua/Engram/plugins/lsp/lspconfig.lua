@@ -84,6 +84,10 @@ return {
 			vim.diagnostic.config({ virtual_text = not current })
 		end, { desc = "Toggle LSP virtual text" })
 
+		vim.keymap.set("n", "<leader>lh", function()
+			vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }), { bufnr = 0 })
+		end, { desc = "Toggle LSP Inlay Hints" })
+
 		-- <leader>ll toggle between virtual text mode and precise hover mode
 		-- vim.keymap.set("n", "<leader>ll", function()
 		-- 	virtual_text_enabled = not virtual_text_enabled
@@ -258,6 +262,11 @@ return {
 			-- This ensures Neovim doesn't get confused by your shell path
 			cmd = { "rust-analyzer" },
 			filetypes = { "rust" },
+			on_attach = function(client, bufnr)
+				if client:supports_method("textDocument/inlayHint") then
+					vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+				end
+			end,
 			settings = {
 				["rust-analyzer"] = {
 					cargo = {
@@ -266,6 +275,12 @@ return {
 					checkOnSave = true,
 					check = {
 						command = "clippy",
+					},
+					inlayHints = {
+						typeHints = { enable = true },
+						chainingHints = { enable = true },
+						parameterHints = { enable = true },
+						closingBraceHints = { enable = true, minLines = 25 },
 					},
 				},
 			},
